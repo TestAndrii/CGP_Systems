@@ -31,7 +31,7 @@ class User extends Authenticatable
 
     static public function sortByCountImages($sort = 'desc')
     {
-        return User::withCount('images')
+        return User::withCount(['images'])
             ->orderBy('images_count', $sort)
             ->limit(5)
             ->get();
