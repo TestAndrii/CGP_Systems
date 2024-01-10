@@ -29,11 +29,11 @@ class User extends Authenticatable
         return $this->hasMany(UserImage::class);
     }
 
-    static public function sortByCountImages($sort = 'desc')
+    static public function sortByCountImages($limit = 5, $sort = 'desc')
     {
         return User::withCount(['images'])
             ->orderBy('images_count', $sort)
-            ->limit(5)
+            ->limit($limit)
             ->get();
     }
 }
