@@ -17,6 +17,7 @@ class UserResource extends JsonResource
         return [
             'id' => $this->resource->id,
             'name' => $this->resource->name,
+            'city' => $this->resource->city,
             'countImages' => $this->resource->images()->count()
         ];
     }
